@@ -3,7 +3,7 @@ import { Section } from './components/Section';
 import { ExperienceItem } from './components/ExperienceItem';
 import { ProjectItem } from './components/ProjectItem';
 import { RESUME_DATA } from './constants';
-import { Mail, Linkedin, Github, MapPin, ArrowRight, ExternalLink, Share2, Check } from 'lucide-react';
+import { Mail, Linkedin, Github, MapPin, ArrowRight, ExternalLink, Share2, Check, Download, Star, Award, Mic, FileText } from 'lucide-react';
 
 const App: React.FC = () => {
   const [showToast, setShowToast] = useState(false);
@@ -68,6 +68,16 @@ const App: React.FC = () => {
         >
           Share CV <Share2 size={16} />
         </button>
+
+        {/* Download CV Button */}
+        <a 
+          href="/cv-lekan-koku.pdf"
+          download="Lekan-Koku-CV.pdf"
+          className="bg-black text-white border-2 border-black px-6 py-3 font-mono text-xs uppercase tracking-widest hover:bg-white hover:text-black hover:border-black transition-colors duration-200 flex items-center gap-2"
+          aria-label="Download CV"
+        >
+          Download CV <Download size={16} />
+        </a>
       </div>
 
       {/* Accessible Skip Link */}
@@ -113,14 +123,34 @@ const App: React.FC = () => {
             </div>
             
             <div className="mb-2 lg:mb-4 lg:max-w-md w-full lg:text-right flex flex-col items-start lg:items-end">
-              <div className="font-mono text-sm tracking-widest border border-black inline-block px-3 py-1 uppercase mb-6 bg-white">
-                {RESUME_DATA.headline}
+              <div className="flex flex-col lg:items-end gap-3 mb-6">
+                <div className="font-mono text-sm tracking-widest border border-black inline-block px-3 py-1 uppercase bg-white">
+                  {RESUME_DATA.headline}
+                </div>
+                {RESUME_DATA.availabilityStatus && (
+                  <div className="font-mono text-xs tracking-widest border border-black inline-block px-3 py-2 uppercase bg-black text-white flex items-center gap-2">
+                    <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                    {RESUME_DATA.availabilityStatus}
+                  </div>
+                )}
               </div>
               <p className="font-sans text-xl md:text-2xl leading-relaxed text-balance">
                 {RESUME_DATA.subheadline}
               </p>
             </div>
           </div>
+
+          {/* Stats Dashboard */}
+          {RESUME_DATA.stats && RESUME_DATA.stats.length > 0 && (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+              {RESUME_DATA.stats.map((stat, idx) => (
+                <div key={idx} className="border border-black p-6 text-center hover:bg-black hover:text-white transition-colors duration-200">
+                  <div className="font-serif text-4xl font-bold mb-2">{stat.value}</div>
+                  <div className="font-mono text-xs uppercase tracking-widest">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          )}
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             {/* Photo Placeholder */}
@@ -160,20 +190,17 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {/* REFERENCES (Moved Up) */}
-        <Section title="References" id="references">
+        {/* TESTIMONIALS/REFERENCES */}
+        <Section title="Testimonials" id="references">
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
              {RESUME_DATA.references.map((ref, idx) => (
-               <div key={idx} className="group border border-transparent hover:border-black p-6 transition-all duration-200">
+               <div key={idx} className="group border border-black p-6 hover:bg-black hover:text-white transition-all duration-200">
+                 {ref.quote && (
+                   <p className="font-serif text-lg italic mb-6 leading-relaxed">"{ref.quote}"</p>
+                 )}
                  <h3 className="font-serif text-xl font-bold mb-1">{ref.name}</h3>
-                 <p className="font-sans text-lg italic mb-2">{ref.title}</p>
-                 <p className="font-mono text-xs uppercase tracking-widest mb-4">@ {ref.company}</p>
-                 <a 
-                   href={ref.url || "#"} 
-                   className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest border-b border-black pb-0.5 hover:pb-1 transition-all"
-                 >
-                   {ref.linkedin} <ExternalLink size={12} />
-                 </a>
+                 <p className="font-sans text-base mb-2">{ref.title}</p>
+                 <p className="font-mono text-xs uppercase tracking-widest opacity-70">@ {ref.company}</p>
                </div>
              ))}
            </div>
@@ -196,6 +223,137 @@ const App: React.FC = () => {
             ))}
           </div>
         </Section>
+
+        {/* ARTICLES/WRITING */}
+        {RESUME_DATA.articles && RESUME_DATA.articles.length > 0 && (
+          <Section title="Writing & Articles" id="articles">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {RESUME_DATA.articles.map((article, idx) => (
+                <a 
+                  key={idx}
+                  href={article.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group border border-black p-6 hover:bg-black hover:text-white transition-all duration-200"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <FileText size={24} strokeWidth={1.5} />
+                    {article.platform && (
+                      <span className="font-mono text-xs uppercase tracking-widest opacity-70">
+                        {article.platform}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="font-serif text-xl font-bold mb-3 leading-tight">{article.title}</h3>
+                  <p className="font-sans text-base mb-4 leading-relaxed opacity-90">{article.description}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs uppercase tracking-widest opacity-70">{article.publishedDate}</span>
+                    <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </a>
+              ))}
+            </div>
+          </Section>
+        )}
+
+        {/* OPEN SOURCE */}
+        {RESUME_DATA.openSourceProjects && RESUME_DATA.openSourceProjects.length > 0 && (
+          <Section title="Open Source" id="opensource">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {RESUME_DATA.openSourceProjects.map((project, idx) => (
+                <a 
+                  key={idx}
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group border border-black p-6 hover:bg-black hover:text-white transition-all duration-200"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className="font-mono text-lg font-bold">{project.name}</h3>
+                    {project.stars && (
+                      <div className="flex items-center gap-1 font-mono text-sm">
+                        <Star size={16} strokeWidth={1.5} />
+                        {project.stars}
+                      </div>
+                    )}
+                  </div>
+                  <p className="font-sans text-base mb-4 leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <span 
+                        key={tech}
+                        className="font-mono text-xs uppercase tracking-widest px-2 py-1 border border-current"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </Section>
+        )}
+
+        {/* SPEAKING */}
+        {RESUME_DATA.talks && RESUME_DATA.talks.length > 0 && (
+          <Section title="Speaking & Presentations" id="speaking">
+            <div className="space-y-6">
+              {RESUME_DATA.talks.map((talk, idx) => (
+                <div 
+                  key={idx}
+                  className="border-l-[4px] border-black pl-6 py-2 hover:bg-neutral-50 transition-colors duration-100"
+                >
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-2">
+                    <h3 className="font-serif text-xl font-bold flex items-center gap-3">
+                      <Mic size={20} strokeWidth={1.5} />
+                      {talk.title}
+                    </h3>
+                    <span className="font-mono text-xs uppercase tracking-widest border border-black px-2 py-1 inline-block w-fit">
+                      {talk.type}
+                    </span>
+                  </div>
+                  <p className="font-sans text-lg mb-1">{talk.event}</p>
+                  <div className="flex items-center gap-4">
+                    <span className="font-mono text-sm text-muted-foreground uppercase tracking-widest">{talk.date}</span>
+                    {talk.url && (
+                      <a 
+                        href={talk.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-widest hover:underline"
+                      >
+                        View <ExternalLink size={12} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Section>
+        )}
+
+        {/* CERTIFICATIONS */}
+        {RESUME_DATA.certifications && RESUME_DATA.certifications.length > 0 && (
+          <Section title="Certifications" id="certifications">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {RESUME_DATA.certifications.map((cert, idx) => (
+                <div 
+                  key={idx}
+                  className="border border-black p-6 hover:bg-black hover:text-white transition-all duration-200 group"
+                >
+                  <div className="flex items-start gap-4">
+                    <Award size={24} strokeWidth={1.5} className="flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-serif text-xl font-bold mb-2">{cert.name}</h3>
+                      <p className="font-sans text-base mb-2">{cert.issuer}</p>
+                      <p className="font-mono text-sm uppercase tracking-widest opacity-70">{cert.date}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Section>
+        )}
 
         {/* CORE EXPERTISE (Moved Down) */}
         <Section title="Core Expertise" id="skills">
@@ -230,6 +388,20 @@ const App: React.FC = () => {
                  <p className="font-mono text-sm text-muted-foreground uppercase tracking-widest">{edu.location}</p>
                </div>
              ))}
+          </div>
+        </Section>
+
+        {/* LANGUAGES */}
+        <Section title="Languages" id="languages">
+          <div className="flex flex-wrap gap-6">
+            {RESUME_DATA.languages.map((language, idx) => (
+              <div 
+                key={idx}
+                className="border border-black px-6 py-3 font-serif text-lg hover:bg-black hover:text-white transition-colors duration-100"
+              >
+                {language}
+              </div>
+            ))}
           </div>
         </Section>
 

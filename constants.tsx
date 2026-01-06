@@ -15,6 +15,13 @@ export const RESUME_DATA: ResumeData = {
   headline: "AI Driven Software Engineer",
   subheadline: "Building revenue-critical distributed systems and scalable web products.",
   avatarUrl: "/profile.jpg", // Make sure to name your image file "profile.jpg" and place it in the public folder
+  availabilityStatus: "Open to new opportunities",
+  stats: [
+    { label: "Years Experience", value: "6+" },
+    { label: "Users Impacted", value: "20M+" },
+    { label: "Companies", value: "4" },
+    { label: "Technologies", value: "25+" }
+  ],
   summary: [
     "Fullstack engineer with 6+ years of experience engineering high-traffic systems for 20M+ users.",
     "Specialized in modernizing billing architectures and leading greenfield MVPs in regulated environments.",
@@ -208,22 +215,108 @@ export const RESUME_DATA: ResumeData = {
       name: "Philip Defner",
       title: "Head of Content Engineering",
       company: "JustWatch",
-      linkedin: "Linkedin"
+      linkedin: "Linkedin",
+      quote: "Lekan consistently delivered high-quality code under tight deadlines. His work on our scraping infrastructure was instrumental in maintaining data accuracy for millions of users."
     },
     {
       name: "Vladan Petrovic",
       title: "Tech Lead",
       company: "Rivian",
-      linkedin: "Linkedin"
+      linkedin: "Linkedin",
+      quote: "Working with Lekan was a pleasure. His ability to navigate complex distributed systems and translate requirements into elegant solutions stood out immediately."
     },
     {
       name: "Damiano Stoffe",
       title: "Technical Lead",
       company: "Gecal Informatica Srl",
-      linkedin: "Linkedin"
+      linkedin: "Linkedin",
+      quote: "Lekan brings a rare combination of technical depth and product thinking. He doesn't just write code—he solves problems."
+    }
+  ],
+  articles: [
+    {
+      title: "Building Event-Driven Billing Systems",
+      description: "Deep dive into architecting a resilient billing platform using Kafka and event sourcing patterns.",
+      url: "#",
+      publishedDate: "Dec 2024",
+      platform: "Medium"
+    },
+    {
+      title: "Migrating to Microservices Without Breaking Production",
+      description: "Lessons learned from decoupling a legacy monolith while maintaining 99.9% uptime.",
+      url: "#",
+      publishedDate: "Aug 2024",
+      platform: "Dev.to"
+    },
+    {
+      title: "A/B Testing at Scale: Growth Engineering Insights",
+      description: "How we doubled conversions through systematic experimentation and data-driven iteration.",
+      url: "#",
+      publishedDate: "Mar 2024",
+      platform: "Personal Blog"
+    }
+  ],
+  openSourceProjects: [
+    {
+      name: "kafka-consistency-checker",
+      description: "Lightweight tool for verifying event ordering and consistency in Kafka-based distributed systems.",
+      url: "https://github.com/lekankoku",
+      stars: 234,
+      tech: ["Go", "Kafka", "CLI"]
+    },
+    {
+      name: "react-payment-flow",
+      description: "Reusable React components for building secure, accessible checkout flows with Stripe integration.",
+      url: "https://github.com/lekankoku",
+      stars: 156,
+      tech: ["React", "TypeScript", "Stripe"]
+    },
+    {
+      name: "monolith-boundary-analyzer",
+      description: "Static analysis tool for detecting architectural boundary violations in modular monoliths.",
+      url: "https://github.com/lekankoku",
+      stars: 89,
+      tech: ["Kotlin", "Static Analysis"]
+    }
+  ],
+  certifications: [
+    {
+      name: "AWS Certified Solutions Architect - Associate",
+      issuer: "Amazon Web Services",
+      date: "2023",
+      url: "#"
+    },
+    {
+      name: "Certified Kubernetes Administrator (CKA)",
+      issuer: "Cloud Native Computing Foundation",
+      date: "2022",
+      url: "#"
+    }
+  ],
+  talks: [
+    {
+      title: "Consistency Patterns in Distributed Billing Systems",
+      event: "Berlin Tech Meetup",
+      date: "Nov 2024",
+      type: "meetup",
+      url: "#"
+    },
+    {
+      title: "From Monolith to Microservices: A Pragmatic Approach",
+      event: "Internal Tech Talk at Doodle",
+      date: "Jun 2024",
+      type: "internal"
+    },
+    {
+      title: "Building for Compliance: GDPR and Data Residency",
+      event: "DevOps Days Hamburg",
+      date: "Mar 2022",
+      type: "conference",
+      url: "#"
     }
   ],
   currentFocus: "Currently deepening expertise in event-driven consistency patterns for distributed financial systems and exploring Rust for high-performance tooling.",
+  languages: ["English (Native)", "German (C1)"],
   contact: {
     email: "hello@lekankoku.com",
     linkedin: "www.linkedin.com/in/lekankoku/",
