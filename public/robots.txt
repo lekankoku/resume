@@ -1,0 +1,7 @@
+# robots.txt for https://lekankoku.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://lekankoku.com/sitemap.xml
+
