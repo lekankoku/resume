@@ -32,7 +32,7 @@ export const RESUME_DATA: ResumeData = {
     {
       company: "Doodle",
       url: "https://doodle.com/",
-      role: "Senior Fullstack Engineer",
+      role: "Fullstack Engineer",
       period: getDoodlePeriod(),
       location: "Berlin, DE (Remote)",
       description: "Leading billing architecture modernization and growth engineering for a platform serving 2M+ DAU.",
