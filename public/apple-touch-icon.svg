@@ -1,0 +1,20 @@
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <!-- White Background -->
+  <rect width="180" height="180" fill="#ffffff"/>
+  
+  <!-- Black Border -->
+  <rect x="10" y="10" width="160" height="160" fill="none" stroke="#000000" stroke-width="8"/>
+  
+  <!-- Letter L -->
+  <path d="M 45 50 L 45 130 L 85 130" stroke="#000000" stroke-width="12" fill="none" stroke-linecap="square"/>
+  
+  <!-- Letter K -->
+  <path d="M 100 50 L 100 130 M 100 90 L 135 50 M 100 90 L 135 130" stroke="#000000" stroke-width="12" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
+  
+  <!-- Corner decoration -->
+  <rect x="142" y="142" width="20" height="20" fill="#ffffff" stroke="#000000" stroke-width="6"/>
+  
+  <!-- Subtle corner accent on opposite side -->
+  <rect x="18" y="18" width="8" height="8" fill="#000000"/>
+</svg>
+

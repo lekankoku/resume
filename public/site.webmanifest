@@ -1,0 +1,24 @@
+{
+  "name": "Lekan Koku - Senior Software Engineer",
+  "short_name": "Lekan Koku",
+  "description": "Portfolio of Lekan Koku - Senior Fullstack Engineer specialized in distributed systems",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
+
