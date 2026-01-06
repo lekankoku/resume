@@ -14,7 +14,7 @@ export const RESUME_DATA: ResumeData = {
   name: "Lekan Koku",
   headline: "AI Driven Software Engineer",
   subheadline: "Building revenue-critical distributed systems and scalable web products.",
-  avatarUrl: "./profile.jpg", // Make sure to name your image file "profile.jpg" and place it in the public folder
+  avatarUrl: "/profile.jpg", // Make sure to name your image file "profile.jpg" and place it in the public folder
   summary: [
     "Fullstack engineer with 6+ years of experience engineering high-traffic systems for 20M+ users.",
     "Specialized in modernizing billing architectures and leading greenfield MVPs in regulated environments.",
