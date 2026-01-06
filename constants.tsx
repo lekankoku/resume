@@ -19,8 +19,7 @@ export const RESUME_DATA: ResumeData = {
   stats: [
     { label: "Years Experience", value: "6+" },
     { label: "Users Impacted", value: "20M+" },
-    { label: "Companies", value: "4" },
-    { label: "Technologies", value: "25+" }
+    { label: "Companies", value: "4" }
   ],
   summary: [
     "Fullstack engineer with 6+ years of experience engineering high-traffic systems for 20M+ users.",
@@ -215,22 +214,22 @@ export const RESUME_DATA: ResumeData = {
       name: "Philip Defner",
       title: "Head of Content Engineering",
       company: "JustWatch",
-      linkedin: "Linkedin",
-      quote: "Lekan consistently delivered high-quality code under tight deadlines. His work on our scraping infrastructure was instrumental in maintaining data accuracy for millions of users."
+      linkedin: "LinkedIn",
+      url: "https://www.linkedin.com/in/philipp-defner-4b7261134"
     },
     {
       name: "Vladan Petrovic",
       title: "Tech Lead",
-      company: "Rivian",
-      linkedin: "Linkedin",
-      quote: "Working with Lekan was a pleasure. His ability to navigate complex distributed systems and translate requirements into elegant solutions stood out immediately."
+      company: "Doodle AG",
+      linkedin: "LinkedIn",
+      url: "https://www.linkedin.com/in/vladanpet/"
     },
     {
       name: "Damiano Stoffe",
-      title: "Technical Lead",
+      title: "Tech Lead",
       company: "Gecal Informatica Srl",
-      linkedin: "Linkedin",
-      quote: "Lekan brings a rare combination of technical depth and product thinking. He doesn't just write code—he solves problems."
+      linkedin: "LinkedIn",
+      url: "https://www.linkedin.com/in/damiano-stoffie-109891164"
     }
   ],
   articles: [

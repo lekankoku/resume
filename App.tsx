@@ -190,17 +190,22 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {/* TESTIMONIALS/REFERENCES */}
-        <Section title="Testimonials" id="references">
+        {/* REFERENCES */}
+        <Section title="References" id="references">
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
              {RESUME_DATA.references.map((ref, idx) => (
-               <div key={idx} className="group border border-black p-6 hover:bg-black hover:text-white transition-all duration-200">
-                 {ref.quote && (
-                   <p className="font-serif text-lg italic mb-6 leading-relaxed">"{ref.quote}"</p>
-                 )}
+               <div key={idx} className="group border border-transparent hover:border-black p-6 transition-all duration-200">
                  <h3 className="font-serif text-xl font-bold mb-1">{ref.name}</h3>
-                 <p className="font-sans text-base mb-2">{ref.title}</p>
-                 <p className="font-mono text-xs uppercase tracking-widest opacity-70">@ {ref.company}</p>
+                 <p className="font-sans text-lg italic mb-2">{ref.title}</p>
+                 <p className="font-mono text-xs uppercase tracking-widest mb-4">@ {ref.company}</p>
+                 <a 
+                   href={ref.url || "#"} 
+                   target="_blank"
+                   rel="noreferrer"
+                   className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest border-b border-black pb-0.5 hover:pb-1 transition-all"
+                 >
+                   {ref.linkedin} <ExternalLink size={12} />
+                 </a>
                </div>
              ))}
            </div>
@@ -224,8 +229,8 @@ const App: React.FC = () => {
           </div>
         </Section>
 
-        {/* ARTICLES/WRITING */}
-        {RESUME_DATA.articles && RESUME_DATA.articles.length > 0 && (
+        {/* ARTICLES/WRITING - Hidden until content is ready */}
+        {false && RESUME_DATA.articles && RESUME_DATA.articles.length > 0 && (
           <Section title="Writing & Articles" id="articles">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {RESUME_DATA.articles.map((article, idx) => (
@@ -256,8 +261,8 @@ const App: React.FC = () => {
           </Section>
         )}
 
-        {/* OPEN SOURCE */}
-        {RESUME_DATA.openSourceProjects && RESUME_DATA.openSourceProjects.length > 0 && (
+        {/* OPEN SOURCE - Hidden until content is ready */}
+        {false && RESUME_DATA.openSourceProjects && RESUME_DATA.openSourceProjects.length > 0 && (
           <Section title="Open Source" id="opensource">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {RESUME_DATA.openSourceProjects.map((project, idx) => (
@@ -294,8 +299,8 @@ const App: React.FC = () => {
           </Section>
         )}
 
-        {/* SPEAKING */}
-        {RESUME_DATA.talks && RESUME_DATA.talks.length > 0 && (
+        {/* SPEAKING - Hidden until content is ready */}
+        {false && RESUME_DATA.talks && RESUME_DATA.talks.length > 0 && (
           <Section title="Speaking & Presentations" id="speaking">
             <div className="space-y-6">
               {RESUME_DATA.talks.map((talk, idx) => (
@@ -332,8 +337,8 @@ const App: React.FC = () => {
           </Section>
         )}
 
-        {/* CERTIFICATIONS */}
-        {RESUME_DATA.certifications && RESUME_DATA.certifications.length > 0 && (
+        {/* CERTIFICATIONS - Hidden until content is ready */}
+        {false && RESUME_DATA.certifications && RESUME_DATA.certifications.length > 0 && (
           <Section title="Certifications" id="certifications">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {RESUME_DATA.certifications.map((cert, idx) => (
