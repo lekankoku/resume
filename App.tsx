@@ -127,6 +127,10 @@ const App: React.FC = () => {
                 <div className="font-mono text-sm tracking-widest border border-black inline-block px-3 py-1 uppercase bg-white">
                   {RESUME_DATA.headline}
                 </div>
+                <div className="font-mono text-xs tracking-widest border border-black inline-block px-3 py-2 uppercase bg-white flex items-center gap-2">
+                  <MapPin size={14} strokeWidth={1.5} />
+                  Berlin, Germany
+                </div>
                 {RESUME_DATA.availabilityStatus && (
                   <div className="font-mono text-xs tracking-widest border border-black inline-block px-3 py-2 uppercase bg-black text-white flex items-center gap-2">
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
