@@ -155,7 +155,7 @@ const App: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             {/* Photo Placeholder */}
             <div className="md:col-span-4 lg:col-span-3 order-1 md:order-2">
-              <div className="aspect-[4/5] bg-neutral-100 border-[1px] border-black relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+              <div className="aspect-[4/5] bg-neutral-100 border-[1px] border-black relative overflow-hidden">
                 {RESUME_DATA.avatarUrl ? (
                    <img src={RESUME_DATA.avatarUrl} alt={RESUME_DATA.name} className="w-full h-full object-cover" />
                 ) : (
