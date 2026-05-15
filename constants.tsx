@@ -19,7 +19,7 @@ export const RESUME_DATA: ResumeData = {
   stats: [
     { label: "Years Experience", value: "6+" },
     { label: "Users Impacted", value: "20M+" },
-    { label: "Companies", value: "4" }
+    { label: "Companies", value: "5" }
   ],
   summary: [
     "Fullstack engineer with 6+ years of experience engineering high-traffic systems for 20M+ users.",
@@ -35,6 +35,20 @@ export const RESUME_DATA: ResumeData = {
     }
   ],
   experience: [
+    {
+      company: "N26 Group",
+      url: "https://n26.com/",
+      role: "Software Engineer",
+      period: "Apr 2026 — Present",
+      location: "Berlin, DE (Hybrid)",
+      description: "Building real-time financial crime detection and customer risk systems on high-throughput event streams in a regulated neobank environment.",
+      highlights: [
+        "Building real-time transaction monitoring and AML/sanctions screening systems in Java and Kotlin on high-throughput Kafka event streams.",
+        "Designing distributed, event-driven microservices across the Customer Risk Lifecycle — digital identity, risk profiling, and access management.",
+        "Integrating AI-assisted detection into the risk pipeline to improve financial crime signal quality and reduce false positives.",
+      ],
+      tech: ["Java", "Kotlin", "Kafka", "Microservices", "AML"]
+    },
     {
       company: "Doodle",
       url: "https://doodle.com/",
@@ -314,7 +328,7 @@ export const RESUME_DATA: ResumeData = {
       url: "#"
     }
   ],
-  currentFocus: "Currently deepening expertise in event-driven consistency patterns for distributed financial systems and exploring Rust for high-performance tooling.",
+  currentFocus: "Building real-time AML and sanctions screening on Kafka at N26, and deepening expertise in event-driven risk systems and AI-assisted financial crime detection.",
   languages: ["English (Native)", "German (C1)"],
   contact: {
     email: "hello@lekankoku.com",
